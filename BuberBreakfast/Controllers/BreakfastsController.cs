@@ -1,5 +1,6 @@
 using BuberBreakfast.Contracts.Breakfast;
 using BuberBreakfast.Models;
+using BuberBreakfast.Services.Breakfasts;
 
 namespace BuberBreakfast.Controllers
 {
@@ -10,6 +11,12 @@ namespace BuberBreakfast.Controllers
     [ApiController]
     public class BreakfastsController : ControllerBase
     {
+        private readonly IBreakfastService _breakfastService;
+
+        public BreakfastsController(IBreakfastService breakfastService) {
+            _breakfastService = breakfastService;
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateBreakfast(CreateBreakfastRequest request)
         {
