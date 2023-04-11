@@ -18,7 +18,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-app.UseExceptionHandler("/error");
+app.UseExceptionHandler("/api/error");
 app.UseHttpsRedirection();
 app.MapControllers();
 app.Run();
